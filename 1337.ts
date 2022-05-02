@@ -1,3 +1,5 @@
+export {}
+
 function kWeakestRows(mat: number[][], k: number): number[] {
   let counts: { index: number, count: number }[] = []
   mat.forEach((elem, index) => {

@@ -1,3 +1,5 @@
+export {}
+
 function fizzBuzz(n: number): string[] {
   let ans: string[] = []
   for (let i = 1; i <= n; i++) {

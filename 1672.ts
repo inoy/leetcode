@@ -1,3 +1,5 @@
+export {}
+
 function maximumWealth(accounts: number[][]): number {
   return accounts.map(account =>
     account.reduce((previousValue, currentValue) => previousValue + currentValue)

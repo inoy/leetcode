@@ -1,3 +1,5 @@
+export {}
+
 function canConstruct(ransomNote: string, magazine: string): boolean {
   for (let i = 0; i < ransomNote.length; i++) {
     const n = ransomNote[i]

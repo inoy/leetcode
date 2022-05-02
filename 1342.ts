@@ -1,4 +1,6 @@
-const _numberOfSteps = (num, step: number): number => {
+export {}
+
+const _numberOfSteps = (num: number, step: number): number => {
   if (num === 0) return step
   const half = num / 2
   if (Number.isInteger(half)) return _numberOfSteps(half, ++step)

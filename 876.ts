@@ -1,3 +1,5 @@
+export {}
+
 // Definition for singly-linked list.
 class ListNode {
   val: number
@@ -9,7 +11,7 @@ class ListNode {
   }
 }
 
-const _middleNode = (head: ListNode | null, length: number): number => {
+const _middleNode = (head: ListNode, length: number): number => {
   const {next} = head
   if (next == null) return length
   return _middleNode(next, ++length)
@@ -23,7 +25,7 @@ function middleNode(head: ListNode | null): ListNode | null {
   const middle = Math.round((length - 1) / 2)
   console.log(`cnt = ${length}, middle = ${middle}`)
   for (let i = 0; i < middle - 1; i++) {
-    next = next.next
+    next = next!.next
   }
   return next
 }
