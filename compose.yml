@@ -1,0 +1,12 @@
+services:
+  db:
+    image: mysql:8.0.29
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: leetcode
+      TZ: 'Asia/Tokyo'
+    ports:
+      - 13306:3306
+    volumes:
+      - ~/leetcode/docker/db/data:/var/lib/mysql # Macだと /Users/<ユーザー名>/leetcode/docker に作成 嫌なら書き換えが必要
+    command: [ 'mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_0900_as_cs' ]
