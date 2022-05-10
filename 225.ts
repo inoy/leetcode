@@ -9,7 +9,7 @@ class MyStack {
   }
 
   pop(): number {
-    return this.x.pop()
+    return this.x.pop()!
   }
 
   top(): number {
