@@ -1,3 +1,5 @@
+// noinspection SpellCheckingInspection
+
 export {}
 
 const digitsMap: { [key: number]: string } = {

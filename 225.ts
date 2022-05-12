@@ -1,3 +1,4 @@
+// noinspection JSUnusedGlobalSymbols
 class MyStack {
   constructor(
     public x: number[] = []
