@@ -11,34 +11,25 @@ class TreeNode {
 }
 
 function deepestLeavesSum(root: TreeNode | null): number {
-  console.log(root)
   if (root === null) return 0
 
-  let deepest = -1
-  let ans = 0
-  const d = (level: number, left: TreeNode | null, right: TreeNode | null): void => {
-    if (left !== null) {
-      d(level + 1, left.left, left.right)
-    }
+  let deepestLevel = -1
+  let ret = 0
+  const d = (level: number, node: TreeNode | null): void => {
+    if (node === null) return
 
-    if (right !== null) {
-      d(level + 1, right.left, right.right)
-    }
+    d(level + 1, node.left)
+    d(level + 1, node.right)
 
-    if (level > deepest) {
-      deepest = level
-      ans = 0
+    if (level > deepestLevel) {
+      deepestLevel = level
+      ret = 0
     }
-
-    console.log({deepest, level})
-    if (deepest - 1 === level) {
-      console.log({leftVal: left?.val, rightVal: right?.val})
-      ans += (left !== null) ? left.val : 0
-      ans += (right !== null) ? right.val : 0
-    }
+    if (deepestLevel === level) ret += node.val
   }
-  d(1, root.left, root.right)
-  return ans
+
+  d(0, root)
+  return ret
 }
 
 const seven = new TreeNode(7)
